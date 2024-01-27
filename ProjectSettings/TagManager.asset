@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - eyes
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Scope
+    uniqueID: 3580334315
+    locked: 0
+  - name: Eyes
+    uniqueID: 1557096591
     locked: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d6ab243914ce744f9ee915694dbff8e
+guid: eb3a7e0e79b4b15408ac34d54e7d5761
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,133 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: bodies2_0
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 1835
-        width: 581
-        height: 935
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c288d3d43bd046d40b1ece9ac020852a
-      internalID: -515562661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_1
-      rect:
-        serializedVersion: 2
-        x: 974
-        y: 1790
-        width: 833
-        height: 996
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5111cbd4ff59344cabdae54bc2af219
-      internalID: 1690367434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_2
-      rect:
-        serializedVersion: 2
-        x: 2254
-        y: 1783
-        width: 833
-        height: 997
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff1902ab1e1e3724cb703a2a9bcdbd00
-      internalID: 446793575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_3
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 164
-        width: 581
-        height: 935
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 228fee3e5ac3e9043830468b36dca39a
-      internalID: -154621133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_4
-      rect:
-        serializedVersion: 2
-        x: 1270
-        y: 241
-        width: 831
-        height: 998
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30d700417738c3a4596608756cac171d
-      internalID: -329820409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_5
-      rect:
-        serializedVersion: 2
-        x: 2498
-        y: 233
-        width: 581
-        height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71b05914740010149944996ceb5d5eb5
-      internalID: 1532487199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -271,13 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      bodies2_0: -515562661
-      bodies2_1: 1690367434
-      bodies2_2: 446793575
-      bodies2_3: -154621133
-      bodies2_4: -329820409
-      bodies2_5: 1532487199
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

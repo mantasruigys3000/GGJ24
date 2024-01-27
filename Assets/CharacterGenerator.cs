@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class CharacterGenerator : MonoBehaviour
 {
+    public Sprite blinkSprite;
+    private Sprite tempEye;
+    
+    private const float MAX_BLINK = 0.2f;
+    [SerializeField]
+    private float blinkTimer = MAX_BLINK;
+    
+    private const int SKIN_WHITE = 1;
+    private const int SKIN_BLACK = 0;
+    private const int SKIN_ASIAN = 2;
+
     public SpriteRenderer head;
     public SpriteRenderer left_eye;
     public SpriteRenderer right_eye;
@@ -37,12 +48,32 @@ public class CharacterGenerator : MonoBehaviour
     private int eyeIndex = 0;
     [SerializeField] public List<Sprite> eyes;
 
+    private int mouthIndex = 0;
+    [SerializeField] public List<Sprite> mouths;
+
+    private int legIndex = 0;
+    [SerializeField] public List<Sprite> legs;
+
+    private int eyeBallIndex = 0;
+    [SerializeField] public List<Sprite> eyeballs;
+
+    [SerializeField] public List<Sprite> black_arms;
+    [SerializeField] public List<Sprite> white_arms;
+    [SerializeField] public List<Sprite> asian_arms;
+
+    
     private Camera mainCam;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         mainCam = Camera.main;
+        setMasks();
+        randomize();
+    }
+
+    private void setMasks()
+    {
         rightEyeMask = right_eye.gameObject.GetComponent<SpriteMask>();
         leftEyeMask = left_eye.gameObject.GetComponent<SpriteMask>();
     }
@@ -85,6 +116,12 @@ public class CharacterGenerator : MonoBehaviour
             rightEyeMask.sprite = right_eye.sprite;
             leftEyeMask.sprite = left_eye.sprite;
         }
+        
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            mouthIndex = getNextIndex(mouths, mouthIndex);
+            mouth.sprite = mouths[mouthIndex];
+        }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -95,13 +132,58 @@ public class CharacterGenerator : MonoBehaviour
         {
             moveEyes(-0.05f);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            randomize();
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            blinkTimer = 0;
+            blink();
+        }
+
+        if (blinkTimer < MAX_BLINK)
+        {
+            blinkTimer += Time.deltaTime;
+            if (blinkTimer >= MAX_BLINK)
+            {
+                blinkTimer = MAX_BLINK;
+                unBlink();
+            }
+        }
         
         //LookAtPosition(mainCam.ScreenToWorldPoint(Input.mousePosition));
+    }
+
+    private void blink()
+    {
+        tempEye = left_eye.sprite;
+        left_eye.sprite = blinkSprite;
+        right_eye.sprite = blinkSprite;
+        
+        left_eyeball.gameObject.SetActive(false);
+        right_eyeball.gameObject.SetActive(false);
+    }
+
+    private void unBlink()
+    {
+        right_eye.sprite = tempEye;
+        left_eye.sprite = tempEye;
+        
+        left_eyeball.gameObject.SetActive(true);
+        right_eyeball.gameObject.SetActive(true);
     }
 
     private int getNextIndex(List<Sprite> list, int index)
     {
         return index + 1 > (list.Count - 1) ? 0 : index + 1;
+    }
+
+    private int randomIndex(List<Sprite> list)
+    {
+        return Random.Range(0, list.Count);
     }
 
     private void moveEyes(float amount)
@@ -124,6 +206,85 @@ public class CharacterGenerator : MonoBehaviour
         Vector3 localPos = left_eyeball.transform.localPosition;
         left_eyeball.transform.localPosition = new Vector3(newPos,localPos.y,localPos.z);
 
+    }
+    
+    public void randomize(){
+
+        if (rightEyeMask == null || leftEyeMask == null)
+        {
+            setMasks();
+        }
+        
+        setHeadIndex(randomIndex(heads));
+        setBodyIndex(randomIndex(bodies));
+        setArmIndex(randomIndex(white_arms));
+        setHairIndex(randomIndex(backHairs));
+        setEyeIndex(randomIndex(eyes));
+        setMouthIndex(randomIndex(mouths));
+        setLegIndex(randomIndex(legs));
+        setEyeBallIndex(randomIndex(eyeballs));
+    }
+
+    private void setHeadIndex(int index)
+    {
+        headIndex = index;
+        head.sprite = heads[index];
+    }
+
+    private void setBodyIndex(int index)
+    {
+        body.sprite = bodies[index];
+    }
+    
+    private void setArmIndex(int index)
+    {
+        switch (headIndex)
+        {
+            case SKIN_WHITE:
+                left_arm.sprite = asian_arms[index];
+                right_arm.sprite = asian_arms[index];
+                break;
+            case SKIN_BLACK:
+                left_arm.sprite = black_arms[index];
+                right_arm.sprite = black_arms[index];
+                break;
+            case SKIN_ASIAN:
+                left_arm.sprite = white_arms[index];
+                right_arm.sprite = white_arms[index];
+                break;
+        }
+    }
+
+    private void setHairIndex(int index)
+    {
+        hair_front.sprite = frontHairs[index];
+        hair_back.sprite = backHairs[index];
+    }
+
+    private void setEyeIndex(int index)
+    {
+        left_eye.sprite = eyes[index];
+        right_eye.sprite = eyes[index];
+        
+        rightEyeMask.sprite = right_eye.sprite;
+        leftEyeMask.sprite = left_eye.sprite;
+    }
+
+    private void setMouthIndex(int index)
+    {
+        mouth.sprite = mouths[index];
+    }
+
+    private void setLegIndex(int index)
+    {
+        left_leg.sprite = legs[index];
+        right_leg.sprite = legs[index];
+    }
+
+    private void setEyeBallIndex(int index)
+    {
+        left_eyeball.sprite = eyeballs[index];
+        right_eyeball.sprite = eyeballs[index];
     }
 
 }

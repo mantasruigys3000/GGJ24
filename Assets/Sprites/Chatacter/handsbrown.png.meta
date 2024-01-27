@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d6ab243914ce744f9ee915694dbff8e
+guid: 110ce21951076a4469bc7cebd8464b44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bodies2_0
+      name: handsbrown_0
       rect:
         serializedVersion: 2
-        x: 91
-        y: 1835
-        width: 581
-        height: 935
+        x: 63
+        y: 166
+        width: 414
+        height: 734
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c288d3d43bd046d40b1ece9ac020852a
-      internalID: -515562661
+      spriteID: 3db27c927c47caf43a960222f2df009c
+      internalID: -1689164840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bodies2_1
+      name: handsbrown_1
       rect:
         serializedVersion: 2
-        x: 974
-        y: 1790
-        width: 833
-        height: 996
+        x: 693
+        y: 141
+        width: 414
+        height: 734
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5111cbd4ff59344cabdae54bc2af219
-      internalID: 1690367434
+      spriteID: 71fbb212352e46b4b89c6fdac5744aac
+      internalID: -1475714773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bodies2_2
+      name: handsbrown_2
       rect:
         serializedVersion: 2
-        x: 2254
-        y: 1783
-        width: 833
-        height: 997
+        x: 1364
+        y: 143
+        width: 414
+        height: 734
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1902ab1e1e3724cb703a2a9bcdbd00
-      internalID: 446793575
+      spriteID: abd4626a35744a746ba13086baefc85e
+      internalID: -2132510220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bodies2_3
+      name: handsbrown_3
       rect:
         serializedVersion: 2
-        x: 167
-        y: 164
-        width: 581
-        height: 935
+        x: 2001
+        y: 182
+        width: 414
+        height: 734
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,50 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 228fee3e5ac3e9043830468b36dca39a
-      internalID: -154621133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_4
-      rect:
-        serializedVersion: 2
-        x: 1270
-        y: 241
-        width: 831
-        height: 998
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30d700417738c3a4596608756cac171d
-      internalID: -329820409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bodies2_5
-      rect:
-        serializedVersion: 2
-        x: 2498
-        y: 233
-        width: 581
-        height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71b05914740010149944996ceb5d5eb5
-      internalID: 1532487199
+      spriteID: de350569efe36f448b88df597c1f266e
+      internalID: 1926010576
       vertices: []
       indices: 
       edges: []
@@ -272,12 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bodies2_0: -515562661
-      bodies2_1: 1690367434
-      bodies2_2: 446793575
-      bodies2_3: -154621133
-      bodies2_4: -329820409
-      bodies2_5: 1532487199
+      handsbrown_0: -1689164840
+      handsbrown_1: -1475714773
+      handsbrown_2: -2132510220
+      handsbrown_3: 1926010576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
