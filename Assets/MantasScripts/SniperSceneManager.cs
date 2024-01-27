@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SniperSceneManager : MonoBehaviour
 {
+
+    public static SniperSceneManager instance;
+
     public CharacterGenerator target;
     public CharacterSpawner Spawner;
     public GameObject fogOfWar;
@@ -13,14 +18,33 @@ public class SniperSceneManager : MonoBehaviour
     public GameObject table;
     
     public GameObject spawnPositions;
-    private List<Path> pathList;
+    private List<LineRenderer> lines;
 
     public LineRenderer testPath;
-    
+    public Scope scopeComp;
+
+    private AudioSource sound;
+    [SerializeField] public List<AudioClip> zoomInSounds;
+    [SerializeField] public List<AudioClip> zoomOutSounds;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        instance = this;
+        sound = GetComponent<AudioSource>();
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        pathList = new List<Path>();
+        lines = new List<LineRenderer>();
+        
         if (fogOfWar)
         {
             fogOfWar.SetActive(true);
@@ -30,17 +54,19 @@ public class SniperSceneManager : MonoBehaviour
 
         foreach (LineRenderer child in spawnPositions.transform.GetComponentsInChildren<LineRenderer>())
         {
-            pathList.Add(new Path(child));
+            lines.Add(child);
         }
 
         CharacterGenerator targetCharacter = null;
-        foreach (Path path in pathList)
+        foreach (LineRenderer lr in lines)
         {
-            CharacterPathing pather = Spawner.SpawnCharacter(path.getCurrentNode()).GetComponent<CharacterPathing>();
+            Path _path = new Path(lr, true);
+            CharacterPathing pather = Spawner.SpawnCharacter(_path.getCurrentNode()).GetComponent<CharacterPathing>();
             //pather.setMoveTo(Helper.ChooseFromList(spawnList)); 
             
-            pather.setMoveTo(new Path(testPath));
+            pather.setMoveTo(_path);
             targetCharacter = pather.gameObject.GetComponent<CharacterGenerator>();
+            lr.gameObject.SetActive(false);
         }
 
         if (targetCharacter)
@@ -61,19 +87,35 @@ public class SniperSceneManager : MonoBehaviour
     private void toggleTable()
     {
         showTable = !showTable;
-        setTableValues();
+        setTableValues(true);
     }
 
-    private void setTableValues()
+    private void setTableValues(bool playSound = false)
     {
         if (showTable)
         {
             scope.SetActive(false);
             table.SetActive(true);
+
+            if (playSound)
+            {
+                //unzoom
+                sound.PlayOneShot(Helper.ChooseFromList(zoomOutSounds));
+
+            }
+            
             return;
         }
         scope.SetActive(true);
         table.SetActive(false);
-        
+        if (playSound)
+        {
+            sound.PlayOneShot(Helper.ChooseFromList(zoomInSounds));
+        }
+    }
+
+    public static Path getRandomPath()
+    {
+        return new Path(Helper.ChooseFromList(instance.lines));
     }
 }
