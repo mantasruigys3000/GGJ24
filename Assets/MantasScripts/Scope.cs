@@ -13,11 +13,13 @@ public class Scope : MonoBehaviour
     private bool movingUp = true;
     private Vector3 upperPoint;
     private Vector3 lowerPoint;
-    private float recoilSpeed = 2f;
-    private float recoilDistance = 5f;
+    private float recoilSpeed = 10f;
+    private float recoilDistance = 1.5f;
     
-    private const float MAX_SHOOT_TIMER = 5f;
+    private const float MAX_SHOOT_TIMER = 1.5f;
     private float shooterTimer = MAX_SHOOT_TIMER;
+
+    public AudioClip reloadClip;
 
     private void Awake()
     {
@@ -46,7 +48,7 @@ public class Scope : MonoBehaviour
         }
         if (!canShoot())
         {
-            recoilSpeed = Mathf.Max(0,recoilSpeed - 0.02f);
+            recoilSpeed = Mathf.Max(8f,recoilSpeed - 0.02f);
             if (movingUp)
             {
                 transform.position += Vector3.up * recoilSpeed * Time.deltaTime;
@@ -73,7 +75,9 @@ public class Scope : MonoBehaviour
             if (shooterTimer >= MAX_SHOOT_TIMER)
             {
                 shooterTimer = MAX_SHOOT_TIMER;
-                recoilSpeed = 2f;
+                recoilSpeed = 10f;
+                movingUp = true;
+                sound.PlayOneShot(reloadClip);
             }
         }
 
@@ -95,6 +99,7 @@ public class Scope : MonoBehaviour
             {
                 Debug.Log("Hit" + hit.collider.gameObject.name);
                 Destroy(hit.collider.gameObject);
+                SniperSceneManager.spawnOne();
             }
         }
         

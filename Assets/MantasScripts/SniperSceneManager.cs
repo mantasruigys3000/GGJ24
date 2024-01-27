@@ -26,6 +26,9 @@ public class SniperSceneManager : MonoBehaviour
     private AudioSource sound;
     [SerializeField] public List<AudioClip> zoomInSounds;
     [SerializeField] public List<AudioClip> zoomOutSounds;
+    
+    CharacterGenerator targetCharacter;
+
 
     private void Awake()
     {
@@ -57,21 +60,12 @@ public class SniperSceneManager : MonoBehaviour
             lines.Add(child);
         }
 
-        CharacterGenerator targetCharacter = null;
         foreach (LineRenderer lr in lines)
         {
             Path _path = new Path(lr, true);
-            CharacterPathing pather = Spawner.SpawnCharacter(_path.getCurrentNode()).GetComponent<CharacterPathing>();
-            //pather.setMoveTo(Helper.ChooseFromList(spawnList)); 
-            
-            pather.setMoveTo(_path);
-            targetCharacter = pather.gameObject.GetComponent<CharacterGenerator>();
+            spawnCharAndSetPath(_path);
             lr.gameObject.SetActive(false);
-        }
 
-        if (targetCharacter)
-        {
-            target.copyFrom(targetCharacter);
         }
     }
 
@@ -117,5 +111,24 @@ public class SniperSceneManager : MonoBehaviour
     public static Path getRandomPath()
     {
         return new Path(Helper.ChooseFromList(instance.lines));
+    }
+
+    private void spawnCharAndSetPath(Path _path)
+    {
+        CharacterPathing pather = Spawner.SpawnCharacter(_path.getCurrentNode()).GetComponent<CharacterPathing>();
+        //pather.setMoveTo(Helper.ChooseFromList(spawnList)); 
+            
+        pather.setMoveTo(_path);
+        targetCharacter = pather.gameObject.GetComponent<CharacterGenerator>();
+        
+        if (targetCharacter)
+        {
+            target.copyFrom(targetCharacter);
+        }
+    }
+    
+    public static void  spawnOne()
+    {
+        instance.spawnCharAndSetPath(new Path(Helper.ChooseFromList(instance.lines)));
     }
 }

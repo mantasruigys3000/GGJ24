@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd588fbe92c54714b83ac6ca7e3cae2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadClip: {fileID: 8300000, guid: b3622a8f61975a94cb19b18d74b8f06a, type: 3}
 --- !u!82 &286574043
 AudioSource:
   m_ObjectHideFlags: 0
