@@ -11,19 +11,19 @@ public class CharacterSpawner : MonoBehaviour
     {
         for (int i = -4; i < 4; i++)
         {
-            SpawnCharacter(new Vector3(i * 1,0,0));
+            //SpawnCharacter(new Vector3(i * 1,0,0));
         }
     }
 
-    public void SpawnCharacter(Vector3 position)
+    public GameObject SpawnCharacter(Vector3 position)
     {
-     
         GameObject person = Instantiate(CharacterReference, position, Quaternion.identity);
         CharacterGenerator generator = person.GetComponent<CharacterGenerator>();
         generator.randomize();
         
         // Scale
-        person.transform.localScale /= 4;   
+        person.transform.localScale /= 4;
+        return person;
     }
 
     // Update is called once per frame

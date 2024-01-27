@@ -17,6 +17,20 @@ public class Scope : MonoBehaviour
     {
         // Simple mouse follow for now
         moveTowardsMouse();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Clicked");
+            // Raycast the shot
+            //RaycastHit hit = new RaycastHit();
+            
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.zero);
+            if (hit.collider != null)
+            {
+                Debug.Log("Hit" + hit.collider.gameObject.name);
+                Destroy(hit.collider.gameObject);
+            }
+        }
         
     }
 

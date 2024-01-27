@@ -287,4 +287,23 @@ public class CharacterGenerator : MonoBehaviour
         right_eyeball.sprite = eyeballs[index];
     }
 
+    public void copyFrom(CharacterGenerator other)
+    {
+        head.sprite = other.head.sprite;
+        left_eye.sprite = other.left_eye.sprite;
+        right_eye.sprite = other.right_eye.sprite;
+        right_eyeball.sprite = other.right_eyeball.sprite;
+        left_eyeball.sprite = other.left_eyeball.sprite;
+        mouth.sprite = other.mouth.sprite;
+        hair_back.sprite = other.hair_back.sprite;
+        hair_front.sprite = other.hair_front.sprite;
+        body.sprite = other.body.sprite;
+        left_leg.sprite = other.left_leg.sprite;
+        right_leg.sprite = other.right_leg.sprite;
+        right_arm.sprite = other.right_arm.sprite;
+        left_arm.sprite = other.left_arm.sprite;
+        leftEyeMask.sprite = other.leftEyeMask.sprite;
+        rightEyeMask.sprite = other.rightEyeMask.sprite;
+    }
+
 }
