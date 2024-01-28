@@ -71,6 +71,7 @@ public class Beer : MonoBehaviour
         beerDrinkSpr.enabled = true;
         spr.enabled = false;
         drinkAlarm = 1f;
+        SniperSceneManager.instance.timer += 0.5f * 60;
         
         state++;
         ChangeSprite();
