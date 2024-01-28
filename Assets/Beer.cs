@@ -7,6 +7,8 @@ public class Beer : MonoBehaviour
 {
     public int state = 0;
     private SpriteRenderer spr;
+
+    private string hoverHex = "FBC970";
     
     [SerializeField] public List<Sprite> states;
 
@@ -25,6 +27,16 @@ public class Beer : MonoBehaviour
     private void OnMouseDown()
     {
         Drink();
+    }
+
+    private void OnMouseOver()
+    {
+        spr.color = new Color32(0xFF, 0xDC, 0x8c,0xFF);
+    }
+
+    private void OnMouseExit()
+    {
+        spr.color = Color.white;
     }
 
     public void Drink()

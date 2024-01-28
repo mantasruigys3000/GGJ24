@@ -530,8 +530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215046512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.58, z: -4}
-  m_LocalScale: {x: 1.5701946, y: 1.5701946, z: 1.5701946}
+  m_LocalPosition: {x: 0.08, y: -0.09, z: -4}
+  m_LocalScale: {x: 1.5339481, y: 1.5339481, z: 1.5339481}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 747442400}
@@ -2533,6 +2533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 636782959}
   score: 0
+  drunkState: 0
   target: {fileID: 230767491}
   Spawner: {fileID: 159996362}
   fogOfWar: {fileID: 1754186228}
@@ -2818,7 +2819,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: add1bf8ef2bad624fae5096c9901a130, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8626089, b: 0.5509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
