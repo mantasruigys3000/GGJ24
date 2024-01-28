@@ -31,23 +31,21 @@ public class CursorScript : MonoBehaviour
             Cursor.SetCursor(blank, Vector2.zero, CursorMode.ForceSoftware);
         }
         
-        if (Input.GetKeyUp(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
         }
         
-        else
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                source.Play(0);
-                Cursor.SetCursor(cursorArrowUpdate, Vector2.zero, CursorMode.ForceSoftware);
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
-            }
+            source.Play(0);
+            Cursor.SetCursor(cursorArrowUpdate, Vector2.zero, CursorMode.ForceSoftware);
         }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+        }
+        
     }
 }
