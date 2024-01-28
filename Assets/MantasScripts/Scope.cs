@@ -162,7 +162,7 @@ public class Scope : MonoBehaviour
                     hitCharacter.Die(false);                
 
 
-                    if (wrongHits >= 3)
+                    if (wrongHits >= 4)
                     {
                         Debug.Log("You lose");
                     }

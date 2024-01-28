@@ -119,62 +119,6 @@ public class CharacterGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            bodyIndex = bodyIndex + 1 > (bodies.Count - 1) ? 0 : bodyIndex + 1;
-            body.sprite = bodies[bodyIndex];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            hairIndex = hairIndex + 1 > (frontHairs.Count - 1) ? 0 : hairIndex + 1;
-            hair_front.sprite = frontHairs[hairIndex];
-            hair_back.sprite = backHairs[hairIndex];
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            armIndex = getNextIndex(arms, armIndex);
-            left_arm.sprite = arms[armIndex];
-            right_arm.sprite = arms[armIndex];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            headIndex = getNextIndex(heads, headIndex);
-            head.sprite = heads[headIndex];
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            eyeIndex = getNextIndex(eyes, eyeIndex);
-            left_eye.sprite = eyes[eyeIndex];
-            right_eye.sprite = eyes[eyeIndex];
-
-            rightEyeMask.sprite = right_eye.sprite;
-            leftEyeMask.sprite = left_eye.sprite;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            mouthIndex = getNextIndex(mouths, mouthIndex);
-            mouth.sprite = mouths[mouthIndex];
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            moveEyes(0.05f);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            moveEyes(-0.05f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            randomize();
-        }
 
         if (Input.GetKeyDown(KeyCode.B))
         {

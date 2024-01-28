@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SniperSceneManager : MonoBehaviour
 {
@@ -33,11 +34,10 @@ public class SniperSceneManager : MonoBehaviour
     private AudioSource sound;
     [SerializeField] public List<AudioClip> zoomInSounds;
     [SerializeField] public List<AudioClip> zoomOutSounds;
-    
-    
+
+    private bool isMainGameScene = true;
     
     public CharacterGenerator targetCharacter;
-
 
     private void Awake()
     {
@@ -47,6 +47,7 @@ public class SniperSceneManager : MonoBehaviour
             return;
         }
 
+        DontDestroyOnLoad(this.gameObject);
         instance = this;
         sound = GetComponent<AudioSource>();
 
