@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CharacterGenerator : MonoBehaviour
 {
+    public GameObject alienReference;
+    public GameObject bodyReference;
     public Sprite blinkSprite;
     private Sprite tempEye;
     
@@ -313,11 +317,22 @@ public class CharacterGenerator : MonoBehaviour
         rightEyeMask.sprite = other.rightEyeMask.sprite;
     }
 
-    public void Die()
+    public void Die(bool isAlien = true)
     {
         dead = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        Destroy(gameObject);        
+        
+        if (isAlien)
+        {
+            alienReference.SetActive(true);
+            bodyReference.SetActive(false);
+            GetComponent<Animator>().enabled = false;
+            GetComponent<CharacterPathing>().enabled = false;
+            alienReference.GetComponent<Alien>().enabled = true;
+        }
+        
+        //Destroy(gameObject);        
     }
 
+    
 }
