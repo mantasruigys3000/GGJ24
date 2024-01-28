@@ -10,7 +10,7 @@ public class SniperSceneManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI scoreText;
     public int score;
-    private float timer = 60 * 2;
+    public float timer = 60 * 2;
     
     public static SniperSceneManager instance;
     public int drunkState = 0;

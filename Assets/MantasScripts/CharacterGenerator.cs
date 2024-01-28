@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CharacterGenerator : MonoBehaviour
 {
+    public GameObject alienReference;
+    public GameObject bodyReference;
     public Sprite blinkSprite;
     private Sprite tempEye;
     
@@ -65,7 +69,39 @@ public class CharacterGenerator : MonoBehaviour
     private Camera mainCam;
 
     private bool dead = false;
-    
+
+    private bool sleeping = false;
+    public Sprite z1;
+    public Sprite z2;
+    private int currentZSprite = 0;
+    private float sleepTimer = 0;
+    public SpriteRenderer zSpr;
+
+    public void sleep()
+    {
+        if (sleeping && dead)
+        {
+            sleepTimer += Time.deltaTime;
+            if (sleepTimer > 2)
+            {
+                zSpr.sprite = switchSleepSprite();
+                sleepTimer = 0;
+            }
+        }
+    }
+
+    private Sprite switchSleepSprite()
+    {
+        if (currentZSprite == 0)
+        {
+            currentZSprite = 1;
+            return z1;
+        }
+
+        currentZSprite = 0;
+        return z2;
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -162,6 +198,8 @@ public class CharacterGenerator : MonoBehaviour
         {
             
         }
+        
+        sleep();
     }
 
     private void blink()
@@ -313,11 +351,37 @@ public class CharacterGenerator : MonoBehaviour
         rightEyeMask.sprite = other.rightEyeMask.sprite;
     }
 
-    public void Die()
+    public void Die(bool isAlien = true)
     {
         dead = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        Destroy(gameObject);        
+
+        if (isAlien)
+        {
+            alienReference.SetActive(true);
+            bodyReference.SetActive(false);
+            // GetComponent<Animator>().enabled = false;
+            GetComponent<CharacterPathing>().enabled = false;
+            alienReference.GetComponent<Alien>().somethingElse();
+        }
+        else
+        {
+            GetComponent<Animator>().SetTrigger("dead");
+            GetComponent<CharacterPathing>().enabled = false;
+            
+            tempEye = left_eye.sprite;
+            left_eye.sprite = blinkSprite;
+            right_eye.sprite = blinkSprite;
+        
+            left_eyeball.gameObject.SetActive(false);
+            right_eyeball.gameObject.SetActive(false);
+            sleeping = true;
+            zSpr.gameObject.SetActive(true);
+            zSpr.enabled = true;
+        }
+
+        //Destroy(gameObject);        
     }
 
+    
 }

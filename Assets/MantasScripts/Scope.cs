@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Scope : MonoBehaviour
 {
-
-
     private AudioSource sound;
     private Camera mainCam;
 
@@ -34,8 +32,22 @@ public class Scope : MonoBehaviour
     private void OnEnable()
     {
         breathTimer = 0;
-        swaySpeed = DEFAULT_SWAY_SPEED;
+        swaySpeed = getBaseSway();
         swayRotationDelta = DEFAULT_SWAY_ROTATION_DELTA;
+    }
+
+    public float getBaseSway()
+    {
+        switch (SniperSceneManager.instance.drunkState)
+        {
+            case 0: return 1f;
+            case 1: return 2f;
+            case 2: return 3f;
+            case 3: return 4f;
+            case 4: return 6f;
+        }
+
+        return 10f;
     }
 
     public AudioClip reloadClip;
@@ -141,11 +153,14 @@ public class Scope : MonoBehaviour
                 {
                     SniperSceneManager.spawnOne(true);
                     SniperSceneManager.addScore();
-                    
+
+                    hitCharacter.Die(true);
                 }
                 else
                 {
                     wrongHits++;
+                    hitCharacter.Die(false);                
+
 
                     if (wrongHits >= 3)
                     {
@@ -155,7 +170,6 @@ public class Scope : MonoBehaviour
                     SniperSceneManager.spawnOne(false);
                 }
                 
-                hitCharacter.Die();                
 
                 
             }
