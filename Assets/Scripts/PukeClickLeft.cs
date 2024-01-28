@@ -8,7 +8,7 @@ public class PukeClickLeft : MonoBehaviour
     [SerializeField] ParticleSystem LeftParticle = null;
     [SerializeField] ParticleSystem LeftSplatParticle = null;
     public AudioSource LeftGag;
-    
+    public PukeLivesTracker PukeLivesTrackerRef;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -23,6 +23,7 @@ public class PukeClickLeft : MonoBehaviour
 
             LeftSplatParticle.Play();
             Destroy(gameObject);
+            PukeLivesTrackerRef.RemoveLife();
         }
     }
 

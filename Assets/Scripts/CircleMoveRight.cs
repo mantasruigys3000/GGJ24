@@ -28,7 +28,7 @@ public class CircleMoveRight : MonoBehaviour
 
             float PukePushForce = Random.Range(8.0f, 16.0f);
 
-            Vector3 PukeSpawnPos = new Vector3(1.5f, 4.7f, 0.0f);
+            Vector3 PukeSpawnPos = new Vector3(1.58f, 4.7f, 0.0f);
 
             GameObject PukeCircle = Instantiate(PukePrefab, PukeSpawnPos, Quaternion.identity);
 

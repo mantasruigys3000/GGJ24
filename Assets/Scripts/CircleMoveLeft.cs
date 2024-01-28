@@ -26,9 +26,9 @@ public class CircleMoveLeft : MonoBehaviour
         {
             float SpawnTime = Random.Range(1.0f, 1.5f);
 
-            float PukePushForce = Random.Range(12.0f, 16.0f);
+            float PukePushForce = Random.Range(8.0f, 12.0f);
 
-            Vector3 PukeSpawnPos = new Vector3(-1.5f, 4.7f, 0.0f);
+            Vector3 PukeSpawnPos = new Vector3(-1.4f, 4.7f, 0.0f);
 
             GameObject PukeCircle = Instantiate(PukePrefab, PukeSpawnPos, Quaternion.identity);
 
@@ -38,7 +38,7 @@ public class CircleMoveLeft : MonoBehaviour
 
             
 
-           
+            Debug.Log(SpawnTime);
 
             yield return new WaitForSeconds(SpawnTime);
         }

@@ -7,6 +7,7 @@ public class PukeClickRight : MonoBehaviour
 
     [SerializeField] ParticleSystem RightParticle = null;
     [SerializeField] ParticleSystem RightSplatParticle = null;
+    public PukeLivesTracker PukeLivesTrackerRef;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "ClickCircle")
@@ -20,6 +21,7 @@ public class PukeClickRight : MonoBehaviour
 
             RightSplatParticle.Play();
             Destroy(gameObject);
+            PukeLivesTrackerRef.RemoveLife();
         }
     }
 

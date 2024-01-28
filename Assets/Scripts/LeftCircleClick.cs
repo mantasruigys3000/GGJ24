@@ -8,6 +8,7 @@ public class LeftCircleClick : MonoBehaviour
     public Sprite M1Black;
     SpriteRenderer LeftClickSprite;
     [SerializeField] bool canLeftClick = false;
+    public PukeLivesTracker PukeLivesTrackerRef;
     private void OnTriggerEnter2D(Collider2D col)
     {
         canLeftClick = true;
@@ -38,8 +39,8 @@ public class LeftCircleClick : MonoBehaviour
     {
         if (!canLeftClick & Input.GetMouseButtonDown(0))
         {
-            
-            Debug.Log("FUCKED IT");
+
+            PukeLivesTrackerRef.RemoveLife();
             
         }
         
