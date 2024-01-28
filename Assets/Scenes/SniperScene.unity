@@ -2536,7 +2536,6 @@ MonoBehaviour:
   timeText: {fileID: 1316200345}
   scoreText: {fileID: 636782959}
   score: 0
-  timer: 0
   drunkState: 0
   target: {fileID: 230767491}
   Spawner: {fileID: 159996362}
