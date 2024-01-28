@@ -165,6 +165,8 @@ public class Scope : MonoBehaviour
                     if (wrongHits >= 4)
                     {
                         Debug.Log("You lose");
+                        SceneManager.LoadScene("Scenes/LoseScene", LoadSceneMode.Single);
+                        return;
                     }
                     
                     SniperSceneManager.spawnOne(false);

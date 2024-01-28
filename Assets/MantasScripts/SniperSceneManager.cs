@@ -85,7 +85,8 @@ public class SniperSceneManager : MonoBehaviour
 
         if (timer <= 0 )
         {
-            Debug.Log("Time Ran Out");
+            SceneManager.LoadScene("Scenes/LoseScene", LoadSceneMode.Single);
+            return;
         }
         else
         {
