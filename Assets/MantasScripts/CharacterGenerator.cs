@@ -321,16 +321,16 @@ public class CharacterGenerator : MonoBehaviour
     {
         dead = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        
+
         if (isAlien)
         {
             alienReference.SetActive(true);
             bodyReference.SetActive(false);
-            GetComponent<Animator>().enabled = false;
+            // GetComponent<Animator>().enabled = false;
             GetComponent<CharacterPathing>().enabled = false;
-            alienReference.GetComponent<Alien>().enabled = true;
+            alienReference.GetComponent<Alien>().somethingElse();
         }
-        
+
         //Destroy(gameObject);        
     }
 
