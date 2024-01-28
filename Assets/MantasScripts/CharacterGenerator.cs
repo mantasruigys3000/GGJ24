@@ -77,6 +77,8 @@ public class CharacterGenerator : MonoBehaviour
     private float sleepTimer = 0;
     public SpriteRenderer zSpr;
 
+    private float shouldBlink = 0;
+
     public void sleep()
     {
         if (sleeping && dead)
@@ -105,9 +107,15 @@ public class CharacterGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        generateTimer();
         mainCam = Camera.main;
         setMasks();
         randomize();
+    }
+
+    private void generateTimer()
+    {
+        shouldBlink = Random.Range(2f, 6f);
     }
 
     private void setMasks()
@@ -120,19 +128,33 @@ public class CharacterGenerator : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (!dead)
         {
-            blinkTimer = 0;
-            blink();
-        }
-
-        if (blinkTimer < MAX_BLINK)
-        {
-            blinkTimer += Time.deltaTime;
-            if (blinkTimer >= MAX_BLINK)
+            if (shouldBlink > 0)
             {
-                blinkTimer = MAX_BLINK;
-                unBlink();
+                shouldBlink -= Time.deltaTime;
+                if (shouldBlink <= 0 )
+                {
+                    blinkTimer = 0;
+                    blink();
+                    generateTimer();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                blinkTimer = 0;
+                blink();
+            }
+
+            if (blinkTimer < MAX_BLINK)
+            {
+                blinkTimer += Time.deltaTime;
+                if (blinkTimer >= MAX_BLINK)
+                {
+                    blinkTimer = MAX_BLINK;
+                    unBlink();
+                }
             }
         }
         
@@ -140,10 +162,10 @@ public class CharacterGenerator : MonoBehaviour
 
         if (dead)
         {
-            
+            sleep();
+
         }
         
-        sleep();
     }
 
     private void blink()
@@ -299,6 +321,8 @@ public class CharacterGenerator : MonoBehaviour
     {
         dead = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
+        left_eyeball.enabled = false;
+        right_eyeball.enabled = false;
 
         if (isAlien)
         {
