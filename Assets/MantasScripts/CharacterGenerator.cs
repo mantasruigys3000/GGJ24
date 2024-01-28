@@ -317,7 +317,7 @@ public class CharacterGenerator : MonoBehaviour
     {
         dead = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        //Destroy(gameObject);        
+        Destroy(gameObject);        
     }
 
 }
