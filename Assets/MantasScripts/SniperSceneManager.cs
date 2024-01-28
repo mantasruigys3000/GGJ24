@@ -82,6 +82,12 @@ public class SniperSceneManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+
+        if (timer <= 0 )
+        {
+            Debug.Log("Time Ran Out");
+        }
+        
         timeText.text = getFormattedTime(); 
         if (Input.GetMouseButtonDown(1))
         {
