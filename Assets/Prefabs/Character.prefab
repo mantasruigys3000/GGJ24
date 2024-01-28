@@ -630,7 +630,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9063163c07b31f244bcea7ad44048ce8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1454,7 +1454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8752998352274693693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.23, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4696504, y: 0.4696504, z: 0.4696504}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1520,8 +1520,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8752998352274693693}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 004daefeb9ec7a2479fd09f9ef219536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4219268014509837730}

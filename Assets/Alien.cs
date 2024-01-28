@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
-    private void OnEnable()
+    public Animator animator;
+
+    public void somethingElse()
     {
-        Debug.Log("Alien Spawn");
+        animator.SetTrigger("dead");
+        Debug.Log("mass");
     }
 }
