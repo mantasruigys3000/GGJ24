@@ -81,11 +81,14 @@ public class SniperSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
 
         if (timer <= 0 )
         {
             Debug.Log("Time Ran Out");
+        }
+        else
+        {
+            timer -= Time.deltaTime;
         }
         
         timeText.text = getFormattedTime(); 
