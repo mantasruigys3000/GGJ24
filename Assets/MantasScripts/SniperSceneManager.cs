@@ -12,6 +12,7 @@ public class SniperSceneManager : MonoBehaviour
     public int score;
     
     public static SniperSceneManager instance;
+    public int drunkState = 0;
 
     public CharacterGenerator target;
     public CharacterSpawner Spawner;
@@ -20,6 +21,7 @@ public class SniperSceneManager : MonoBehaviour
     private bool showTable = true;
     public GameObject scope;
     public GameObject table;
+    public GameObject blur;
     
     public GameObject spawnPositions;
     private List<LineRenderer> lines;
@@ -101,6 +103,7 @@ public class SniperSceneManager : MonoBehaviour
         {
             scope.SetActive(false);
             table.SetActive(true);
+            blur.SetActive(true);
 
             if (playSound)
             {
@@ -113,10 +116,16 @@ public class SniperSceneManager : MonoBehaviour
         }
         scope.SetActive(true);
         table.SetActive(false);
+        blur.SetActive(false);
         if (playSound)
         {
             sound.PlayOneShot(Helper.ChooseFromList(zoomInSounds));
         }
+    }
+
+    public static void setDrunkState(int state)
+    {
+        instance.drunkState = state;
     }
 
     public static Path getRandomPath()

@@ -60,7 +60,8 @@ public class Path
         List<Vector3> _positions = new List<Vector3>();
         for (int i = 0; i < lr.positionCount; i++)
         {
-            _positions.Add(lr.GetPosition(i));
+            Vector3 tempPosition = lr.GetPosition(i);
+            _positions.Add(new Vector3(tempPosition.x,tempPosition.y,2f));
         }
 
         if (reverse)

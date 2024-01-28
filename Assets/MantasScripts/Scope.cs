@@ -19,6 +19,22 @@ public class Scope : MonoBehaviour
     private const float MAX_SHOOT_TIMER = 1.5f;
     private float shooterTimer = MAX_SHOOT_TIMER;
 
+    private float breathTimer = 0;
+
+    private const float DEFAULT_SWAY_SPEED = 1f;
+    private const float DEFAULT_SWAY_ROTATION_DELTA = 0.2f;
+    
+    private Vector3 swayDir = Vector3.up;
+    private float swaySpeed = DEFAULT_SWAY_SPEED;
+    private float swayRotationDelta = DEFAULT_SWAY_ROTATION_DELTA;
+
+    private void OnEnable()
+    {
+        breathTimer = 0;
+        swaySpeed = DEFAULT_SWAY_SPEED;
+        swayRotationDelta = DEFAULT_SWAY_ROTATION_DELTA;
+    }
+
     public AudioClip reloadClip;
 
     private void Awake()
@@ -40,10 +56,14 @@ public class Scope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        breathTimer += Time.deltaTime;
+        swaySpeed = Mathf.Min(swaySpeed + breathTimer * 0.001f,4f);
+        swayRotationDelta = Mathf.Min(swayRotationDelta + breathTimer * 0.0005f,2f);
         // Simple mouse follow for now
         if (canShoot())
         {
             moveTowardsMouse();
+            sway();
             
         }
         if (!canShoot())
@@ -115,6 +135,19 @@ public class Scope : MonoBehaviour
             Vector3 direction = (  mousePos - transform.position).normalized;
             transform.position += new Vector3(direction.x * spd,direction.y * spd,0) ;   
         }
+    }
+
+    private void sway()
+    {
+        transform.position += (swayDir * swaySpeed * Time.deltaTime);
+        swayDir = rotate(swayDir, swayRotationDelta * Mathf.Deg2Rad);
+    }
+    
+    public static Vector2 rotate(Vector2 v, float delta) {
+        return new Vector2(
+            v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
+            v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta)
+        );
     }
 
     private void setToMouse()
