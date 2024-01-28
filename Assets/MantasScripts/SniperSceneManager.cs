@@ -27,6 +27,8 @@ public class SniperSceneManager : MonoBehaviour
     [SerializeField] public List<AudioClip> zoomInSounds;
     [SerializeField] public List<AudioClip> zoomOutSounds;
     
+    
+    
     CharacterGenerator targetCharacter;
 
 
