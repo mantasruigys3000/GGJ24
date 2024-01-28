@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puke.unity
     guid: 9734db59555a61245b59927b60605bcc
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: f8cf5ab4bb0696646b6bd4dc470fe2cb
   m_configObjects: {}
