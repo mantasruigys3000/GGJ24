@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618368697662377539
 MonoBehaviour:
@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorArrow: {fileID: 2800000, guid: 0ce8fa140f29ab7439b9a763c44482db, type: 3}
   cursorArrowUpdate: {fileID: 2800000, guid: 58f7ab09f3b717044ac1633b34db241e, type: 3}
+  sniperArrow: {fileID: 2800000, guid: 3b325ef4480055f4c8d51853c52b5ce0, type: 3}
   source: {fileID: 8587511102525162073}
+  gunTable: {fileID: 0}
 --- !u!82 &8587511102525162073
 AudioSource:
   m_ObjectHideFlags: 0
