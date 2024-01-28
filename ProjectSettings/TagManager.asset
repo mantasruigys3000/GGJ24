@@ -17,6 +17,8 @@ TagManager:
   - UI
   - PukeCircle
   - ClickCircle
+  - eyes
+  - 
   - 
   - 
   - 
@@ -50,4 +52,9 @@ TagManager:
     locked: 0
   - name: Particles
     uniqueID: 3585969797
+  - name: Scope
+    uniqueID: 3580334315
+    locked: 0
+  - name: Eyes
+    uniqueID: 1557096591
     locked: 0

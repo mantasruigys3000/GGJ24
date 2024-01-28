@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: ec7db1d3f1175c948916dbe06049a080
+  - enabled: 1
+    path: Assets/Scenes/SniperScene.unity
+    guid: 9ee3672fd69183a4caf30a660590f755
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/SniperScene.unity
+    guid: 9ee3672fd69183a4caf30a660590f755
   m_configObjects: {}

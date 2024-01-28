@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: baa5a6c4d65fda24ab62ae4ae18c703d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: procedural_assets_0
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 3543
+        width: 419
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ab16d886a3cf546813e14f37c5c2c2
+      internalID: 191394854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_1
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 3543
+        width: 420
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09da121b177755f45a7ab250d4b8faa4
+      internalID: 1409512613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_2
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 3613
+        width: 420
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a219c397e5f0da48b2faff8b09d7f5b
+      internalID: -211605940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_3
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 3804
+        width: 228
+        height: 493
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2952469234ef74c8477c5971dddec1
+      internalID: 306241751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_7
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 3241
+        width: 301
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d1e2798a9fd6f4e8c9f7bdfcf31574
+      internalID: 2017665912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_8
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 3290
+        width: 323
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2c7209b7bcfed47b51d606d2c314ed
+      internalID: -527392655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_9
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 3293
+        width: 330
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01946a89ce51598468e5dec85056af1e
+      internalID: 1848180743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_10
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 3241
+        width: 333
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b501eb346a0766d45b37e7a3ebb68797
+      internalID: -1024496722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_11
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 3182
+        width: 229
+        height: 493
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d83a45ca038a9245bf2bbd49f28a0d0
+      internalID: -441350424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_12
+      rect:
+        serializedVersion: 2
+        x: 3286
+        y: 3287
+        width: 229
+        height: 493
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a969901c6856fa459bf8242f873487c
+      internalID: 1047232588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_16
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 2950
+        width: 229
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e615874eff4cbf149acd0bbd75856742
+      internalID: -1035794149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_17
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 2665
+        width: 229
+        height: 493
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb9f89575c700d43ad729724e15d3ee
+      internalID: -1294013308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_18
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 2637
+        width: 229
+        height: 493
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f5a6a7b01206642b5043f15f1f1c80
+      internalID: -1177538806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_19
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 2811
+        width: 226
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd5db244bab9d043ac6c97e22e892a0
+      internalID: -2120133572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_20
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 2669
+        width: 225
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec8933c5d3d7534db312e8a1aab15ed
+      internalID: -48460869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_21
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 2477
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee429fd031ea90041b84aba2dd0371ea
+      internalID: -2030115987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_22
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 2543
+        width: 201
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39de50daefd0b44d85aff6f9a2b3152
+      internalID: 864379316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_23
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 2564
+        width: 198
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245d49107d7b84442820a55ed2f00325
+      internalID: 199439746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_24
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 2446
+        width: 198
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178dba12d7cba274183340b441e64e9c
+      internalID: -2081028519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_25
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 2446
+        width: 198
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd067dba1826d46b43b13243106712
+      internalID: -1138248511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_38
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 1033
+        width: 625
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f98d935b7af7c741a2e940c55751915
+      internalID: 1372100923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_39
+      rect:
+        serializedVersion: 2
+        x: 4587
+        y: 1033
+        width: 625
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460b9ffbc8490524294225545af65128
+      internalID: -1392821113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_40
+      rect:
+        serializedVersion: 2
+        x: 5403
+        y: 1033
+        width: 625
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0ae21c3aa5bb149a61efcb6c11745f
+      internalID: 2023207750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_41
+      rect:
+        serializedVersion: 2
+        x: 6156
+        y: 1033
+        width: 625
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84808d2a1af148d4caa089eb66ad89ab
+      internalID: -1306466461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_42
+      rect:
+        serializedVersion: 2
+        x: 3824
+        y: 332
+        width: 635
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37750b4b1fc5aa4381ab6119515ecbc
+      internalID: -1424186794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_43
+      rect:
+        serializedVersion: 2
+        x: 4646
+        y: 332
+        width: 635
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9412ab5b34945043a994a6ac744926b
+      internalID: 245463950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_44
+      rect:
+        serializedVersion: 2
+        x: 5479
+        y: 332
+        width: 639
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e4ea853ee8d5e469a8eae459b3961e
+      internalID: 388097289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: procedural_assets_45
+      rect:
+        serializedVersion: 2
+        x: 6246
+        y: 332
+        width: 639
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fb61e42ac9e7b458917440ee6a3af4
+      internalID: -1317128579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      procedural_assets_0: 191394854
+      procedural_assets_1: 1409512613
+      procedural_assets_10: -1024496722
+      procedural_assets_11: -441350424
+      procedural_assets_12: 1047232588
+      procedural_assets_13: 2049170377
+      procedural_assets_14: 196141416
+      procedural_assets_15: -949582698
+      procedural_assets_16: -1035794149
+      procedural_assets_17: -1294013308
+      procedural_assets_18: -1177538806
+      procedural_assets_19: -2120133572
+      procedural_assets_2: -211605940
+      procedural_assets_20: -48460869
+      procedural_assets_21: -2030115987
+      procedural_assets_22: 864379316
+      procedural_assets_23: 199439746
+      procedural_assets_24: -2081028519
+      procedural_assets_25: -1138248511
+      procedural_assets_26: 1224728539
+      procedural_assets_27: -549863459
+      procedural_assets_28: 2114294863
+      procedural_assets_29: 494902854
+      procedural_assets_3: 306241751
+      procedural_assets_30: 1040958849
+      procedural_assets_31: -1822656675
+      procedural_assets_32: 1378689656
+      procedural_assets_33: -1617852532
+      procedural_assets_34: -1232873279
+      procedural_assets_35: -621747094
+      procedural_assets_36: -385669776
+      procedural_assets_37: -82499669
+      procedural_assets_38: 1372100923
+      procedural_assets_39: -1392821113
+      procedural_assets_4: 683738277
+      procedural_assets_40: 2023207750
+      procedural_assets_41: -1306466461
+      procedural_assets_42: -1424186794
+      procedural_assets_43: 245463950
+      procedural_assets_44: 388097289
+      procedural_assets_45: -1317128579
+      procedural_assets_5: 297846155
+      procedural_assets_6: 131466971
+      procedural_assets_7: 2017665912
+      procedural_assets_8: -527392655
+      procedural_assets_9: 1848180743
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
