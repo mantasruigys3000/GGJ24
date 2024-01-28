@@ -153,11 +153,14 @@ public class Scope : MonoBehaviour
                 {
                     SniperSceneManager.spawnOne(true);
                     SniperSceneManager.addScore();
-                    
+
+                    hitCharacter.Die(true);
                 }
                 else
                 {
                     wrongHits++;
+                    hitCharacter.Die(false);                
+
 
                     if (wrongHits >= 3)
                     {
@@ -167,7 +170,6 @@ public class Scope : MonoBehaviour
                     SniperSceneManager.spawnOne(false);
                 }
                 
-                hitCharacter.Die();                
 
                 
             }
