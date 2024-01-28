@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 public class SniperSceneManager : MonoBehaviour
 {
 
+    public TextMeshProUGUI scoreText;
+    public int score;
+    
     public static SniperSceneManager instance;
 
     public CharacterGenerator target;
@@ -65,7 +69,7 @@ public class SniperSceneManager : MonoBehaviour
         foreach (LineRenderer lr in lines)
         {
             Path _path = new Path(lr, true);
-            spawnCharAndSetPath(_path);
+            spawnCharAndSetPath(_path,true);
             lr.gameObject.SetActive(false);
 
         }
@@ -82,6 +86,11 @@ public class SniperSceneManager : MonoBehaviour
 
     private void toggleTable()
     {
+        if (!showTable && !scopeComp.canShoot())
+        {
+            return;
+        }
+        
         showTable = !showTable;
         setTableValues(true);
     }
@@ -115,22 +124,29 @@ public class SniperSceneManager : MonoBehaviour
         return new Path(Helper.ChooseFromList(instance.lines));
     }
 
-    private void spawnCharAndSetPath(Path _path)
+    private void spawnCharAndSetPath(Path _path,bool isTarget = false)
     {
         CharacterPathing pather = Spawner.SpawnCharacter(_path.getCurrentNode()).GetComponent<CharacterPathing>();
         //pather.setMoveTo(Helper.ChooseFromList(spawnList)); 
             
         pather.setMoveTo(_path);
-        targetCharacter = pather.gameObject.GetComponent<CharacterGenerator>();
         
-        if (targetCharacter)
+        if (isTarget)
         {
+            targetCharacter = pather.gameObject.GetComponent<CharacterGenerator>();
             target.copyFrom(targetCharacter);
         }
     }
     
     public static void  spawnOne()
     {
-        instance.spawnCharAndSetPath(new Path(Helper.ChooseFromList(instance.lines)));
+        instance.spawnCharAndSetPath(new Path(Helper.ChooseFromList(instance.lines)),true);
+    }
+
+    public static void addScore()
+    {
+        instance.score++;
+        instance.scoreText.text = "Score " + instance.score.ToString();
+        
     }
 }

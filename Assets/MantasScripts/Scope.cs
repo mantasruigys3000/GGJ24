@@ -26,7 +26,7 @@ public class Scope : MonoBehaviour
         sound = GetComponent<AudioSource>();
     }
 
-    private bool canShoot()
+    public bool canShoot()
     {
         return shooterTimer == MAX_SHOOT_TIMER;
     }
@@ -100,6 +100,7 @@ public class Scope : MonoBehaviour
                 Debug.Log("Hit" + hit.collider.gameObject.name);
                 Destroy(hit.collider.gameObject);
                 SniperSceneManager.spawnOne();
+                SniperSceneManager.addScore();
             }
         }
         
