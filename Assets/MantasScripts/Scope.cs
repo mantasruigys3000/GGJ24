@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scope : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Scope : MonoBehaviour
     private float swaySpeed = DEFAULT_SWAY_SPEED;
     private float swayRotationDelta = DEFAULT_SWAY_ROTATION_DELTA;
 
+    public int wrongHits = 0;
+
     private void OnEnable()
     {
         breathTimer = 0;
@@ -53,11 +56,25 @@ public class Scope : MonoBehaviour
         mainCam = Camera.main;
     }
 
+    public float getMaxSwaySpeed()
+    {
+        switch (SniperSceneManager.instance.drunkState)
+        {
+            case 0: return 2f;
+            case 1: return 4f;
+            case 2: return 6f;
+            case 3: return 8f;
+            case 4: return 10f;
+        }
+
+        return 10f;
+    }
+
     // Update is called once per frame
     void Update()
     {
         breathTimer += Time.deltaTime;
-        swaySpeed = Mathf.Min(swaySpeed + breathTimer * 0.001f,4f);
+        swaySpeed = Mathf.Min(swaySpeed + breathTimer * 0.001f,getMaxSwaySpeed());
         swayRotationDelta = Mathf.Min(swayRotationDelta + breathTimer * 0.0005f,2f);
         // Simple mouse follow for now
         if (canShoot())
@@ -118,9 +135,28 @@ public class Scope : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log("Hit" + hit.collider.gameObject.name);
+
+                if (SniperSceneManager.instance.targetCharacter == hit.collider.gameObject.GetComponent<CharacterGenerator>())
+                {
+                    SniperSceneManager.spawnOne(true);
+                    SniperSceneManager.addScore();
+                    
+                }
+                else
+                {
+                    wrongHits++;
+
+                    if (wrongHits >= 3)
+                    {
+                        Debug.Log("You lose");
+                    }
+                    
+                    SniperSceneManager.spawnOne(false);
+                }
+                
                 Destroy(hit.collider.gameObject);
-                SniperSceneManager.spawnOne();
-                SniperSceneManager.addScore();
+
+                
             }
         }
         

@@ -7,9 +7,10 @@ using UnityEngine;
 
 public class SniperSceneManager : MonoBehaviour
 {
-
+    public TextMeshProUGUI timeText;
     public TextMeshProUGUI scoreText;
     public int score;
+    private float timer = 60 * 2;
     
     public static SniperSceneManager instance;
     public int drunkState = 0;
@@ -35,7 +36,7 @@ public class SniperSceneManager : MonoBehaviour
     
     
     
-    CharacterGenerator targetCharacter;
+    public CharacterGenerator targetCharacter;
 
 
     private void Awake()
@@ -80,10 +81,17 @@ public class SniperSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+        timeText.text = getFormattedTime(); 
         if (Input.GetMouseButtonDown(1))
         {
             toggleTable();
         }
+    }
+
+    public string getFormattedTime()
+    {
+        return TimeSpan.FromSeconds(timer).ToString("mm\\:ss\\.ff");
     }
 
     private void toggleTable()
@@ -147,9 +155,9 @@ public class SniperSceneManager : MonoBehaviour
         }
     }
     
-    public static void  spawnOne()
+    public static void  spawnOne(bool setTarget)
     {
-        instance.spawnCharAndSetPath(new Path(Helper.ChooseFromList(instance.lines)),true);
+        instance.spawnCharAndSetPath(new Path(Helper.ChooseFromList(instance.lines)),setTarget);
     }
 
     public static void addScore()

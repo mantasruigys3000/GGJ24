@@ -7,6 +7,7 @@ public class Beer : MonoBehaviour
 {
     public int state = 0;
     private SpriteRenderer spr;
+    private AudioSource sound;
 
     private string hoverHex = "FBC970";
     
@@ -16,6 +17,8 @@ public class Beer : MonoBehaviour
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
+        sound = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -48,6 +51,8 @@ public class Beer : MonoBehaviour
         
         state++;
         ChangeSprite();
+        SniperSceneManager.setDrunkState(state);
+        sound.Play();
     }
 
     private void ChangeSprite()
