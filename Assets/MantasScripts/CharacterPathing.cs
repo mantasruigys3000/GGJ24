@@ -25,7 +25,18 @@ public class CharacterPathing : MonoBehaviour
             transform.position = new Vector3(tempPosition.x, tempPosition.y, transform.position.z);
             if (Vector2.Distance(transform.position, moveTo) < 0.5f)
             {
-                moveTo = currentPath.nextNode();
+                if (currentPath.isAtEnd())
+                {
+                    currentPath = SniperSceneManager.getRandomPath();
+                    moveTo = currentPath.getCurrentNode();
+                    transform.position = currentPath.getCurrentNode();
+                    
+                }
+                else
+                {
+                    moveTo = currentPath.nextNode();
+                }
+                
                 //shouldMove = false;
             }
         }
@@ -77,5 +88,10 @@ public class Path
 
         currentIndex++;
         return getCurrentNode();
+    }
+
+    public bool isAtEnd()
+    {
+        return currentIndex == positions.Count - 1;
     }
 }

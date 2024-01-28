@@ -1,11 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Scope : MonoBehaviour
 {
+
+
+    private AudioSource sound;
     private Camera mainCam;
+
+    private bool movingUp = true;
+    private Vector3 upperPoint;
+    private Vector3 lowerPoint;
+    private float recoilSpeed = 10f;
+    private float recoilDistance = 1.5f;
     
+    private const float MAX_SHOOT_TIMER = 1.5f;
+    private float shooterTimer = MAX_SHOOT_TIMER;
+
+    public AudioClip reloadClip;
+
+    private void Awake()
+    {
+        sound = GetComponent<AudioSource>();
+    }
+
+    private bool canShoot()
+    {
+        return shooterTimer == MAX_SHOOT_TIMER;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +41,65 @@ public class Scope : MonoBehaviour
     void Update()
     {
         // Simple mouse follow for now
-        moveTowardsMouse();
-
-        if (Input.GetMouseButtonDown(0))
+        if (canShoot())
         {
+            moveTowardsMouse();
+            
+        }
+        if (!canShoot())
+        {
+            recoilSpeed = Mathf.Max(8f,recoilSpeed - 0.02f);
+            if (movingUp)
+            {
+                transform.position += Vector3.up * recoilSpeed * Time.deltaTime;
+                if (transform.position.y > upperPoint.y)
+                {
+                    movingUp = false;
+                }
+            }
+            else
+            {
+                transform.position -= Vector3.up * recoilSpeed * Time.deltaTime;
+                if (transform.position.y < lowerPoint.y)
+                {
+                    movingUp = true;
+                }
+            }
+        }
+        
+
+        if (shooterTimer < MAX_SHOOT_TIMER)
+        {
+            shooterTimer += Time.deltaTime;
+
+            if (shooterTimer >= MAX_SHOOT_TIMER)
+            {
+                shooterTimer = MAX_SHOOT_TIMER;
+                recoilSpeed = 10f;
+                movingUp = true;
+                sound.PlayOneShot(reloadClip);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && canShoot())
+        {
+            shooterTimer = 0;
+            
             Debug.Log("Clicked");
+
+            upperPoint = transform.position + (Vector3.up * recoilDistance);
+            lowerPoint = transform.position - (Vector3.up * recoilDistance);
+            
             // Raycast the shot
             //RaycastHit hit = new RaycastHit();
             
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.zero);
+            sound.Play();
             if (hit.collider != null)
             {
                 Debug.Log("Hit" + hit.collider.gameObject.name);
                 Destroy(hit.collider.gameObject);
+                SniperSceneManager.spawnOne();
             }
         }
         
@@ -55,4 +126,6 @@ public class Scope : MonoBehaviour
             0
         );
     }
+
+   
 }
