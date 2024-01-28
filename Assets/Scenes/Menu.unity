@@ -7178,6 +7178,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1698277638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1698277639}
+  m_Layer: 0
+  m_Name: gunTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698277639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698277638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8767068, y: 1.6362196, z: 0.79833955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699409051
 GameObject:
   m_ObjectHideFlags: 0
@@ -8272,6 +8303,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 618368697662377539, guid: c3106612d82ea76459d0bf80be553fbd, type: 3}
+      propertyPath: bench
+      value: 
+      objectReference: {fileID: 1698277638}
+    - target: {fileID: 618368697662377539, guid: c3106612d82ea76459d0bf80be553fbd, type: 3}
+      propertyPath: blank
+      value: 
+      objectReference: {fileID: 2800000, guid: 3a19136924fa55248866bb83754f664e, type: 3}
     - target: {fileID: 8133540604946688396, guid: c3106612d82ea76459d0bf80be553fbd, type: 3}
       propertyPath: m_Name
       value: Cursor
