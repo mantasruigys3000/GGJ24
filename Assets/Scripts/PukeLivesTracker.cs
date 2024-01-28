@@ -9,6 +9,11 @@ public class PukeLivesTracker : MonoBehaviour
     public Text PukeTimer;
     public int PukeLivesCount = 5;
     public int countdownValue = 30;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public GameObject heart4;
+    public GameObject heart5;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +44,28 @@ public class PukeLivesTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LivesText.text = "Lives: " + PukeLivesCount.ToString();
-        PukeTimer.text = "Time: " + countdownValue.ToString();
+        LivesText.text = "Lives:";
+        PukeTimer.text = "Timer: " + countdownValue.ToString();
+
+        if (PukeLivesCount <= 4)
+        {
+            heart5.SetActive(false);
+        }
+        if (PukeLivesCount <= 3)
+        {
+            heart4.SetActive(false);
+        }
+        if (PukeLivesCount <= 2)
+        {
+            heart3.SetActive(false);
+        }
+        if (PukeLivesCount <= 1)
+        {
+            heart2.SetActive(false);
+        }
+        if (PukeLivesCount <= 0)
+        {
+            heart1.SetActive(false);
+        }
     }
 }

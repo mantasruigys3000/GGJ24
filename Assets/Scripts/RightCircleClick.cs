@@ -9,6 +9,7 @@ public class RightCircleClick : MonoBehaviour
     SpriteRenderer RightClickSprite;
     [SerializeField] bool canRightClick = false;
     public PukeLivesTracker PukeLivesTrackerRef;
+    public GameObject WrongTimingRight;
     private void OnTriggerEnter2D(Collider2D col)
     {
         canRightClick = true;
@@ -27,6 +28,13 @@ public class RightCircleClick : MonoBehaviour
         RightClickSprite = GetComponent<SpriteRenderer>();
     }
 
+    IEnumerator RightWarning()
+    {
+        WrongTimingRight.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        WrongTimingRight.SetActive(false);
+    }
+
     IEnumerator ShowRightClick()
     {
         RightClickSprite.sprite = M2Red;
@@ -39,6 +47,7 @@ public class RightCircleClick : MonoBehaviour
     {
         if (!canRightClick & Input.GetMouseButtonDown(1))
         {
+            StartCoroutine(RightWarning());
             PukeLivesTrackerRef.RemoveLife();
 
         }
