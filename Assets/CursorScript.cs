@@ -11,9 +11,13 @@ public class CursorScript : MonoBehaviour
 
     public AudioSource source;
     
+    public GameObject gunTable;
+    
     // Start is called before the first frame update
     void Start()
     {
+        gunTable = GameObject.Find("gunTable");
+        
         Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
         _cam = Camera.main;
     }
@@ -23,7 +27,6 @@ public class CursorScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("wassup");
             source.Play(0);
             Cursor.SetCursor(cursorArrowUpdate, Vector2.zero, CursorMode.ForceSoftware);
         }
