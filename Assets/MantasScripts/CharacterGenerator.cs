@@ -63,6 +63,8 @@ public class CharacterGenerator : MonoBehaviour
 
     
     private Camera mainCam;
+
+    private bool dead = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -155,6 +157,11 @@ public class CharacterGenerator : MonoBehaviour
         }
         
         //LookAtPosition(mainCam.ScreenToWorldPoint(Input.mousePosition));
+
+        if (dead)
+        {
+            
+        }
     }
 
     private void blink()
@@ -304,6 +311,13 @@ public class CharacterGenerator : MonoBehaviour
         left_arm.sprite = other.left_arm.sprite;
         leftEyeMask.sprite = other.leftEyeMask.sprite;
         rightEyeMask.sprite = other.rightEyeMask.sprite;
+    }
+
+    public void Die()
+    {
+        dead = true;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        //Destroy(gameObject);        
     }
 
 }

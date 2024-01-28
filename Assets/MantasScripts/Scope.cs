@@ -136,7 +136,8 @@ public class Scope : MonoBehaviour
             {
                 Debug.Log("Hit" + hit.collider.gameObject.name);
 
-                if (SniperSceneManager.instance.targetCharacter == hit.collider.gameObject.GetComponent<CharacterGenerator>())
+                CharacterGenerator hitCharacter = hit.collider.gameObject.GetComponent<CharacterGenerator>();
+                if (SniperSceneManager.instance.targetCharacter == hitCharacter )
                 {
                     SniperSceneManager.spawnOne(true);
                     SniperSceneManager.addScore();
@@ -154,7 +155,7 @@ public class Scope : MonoBehaviour
                     SniperSceneManager.spawnOne(false);
                 }
                 
-                Destroy(hit.collider.gameObject);
+                hitCharacter.Die();                
 
                 
             }
