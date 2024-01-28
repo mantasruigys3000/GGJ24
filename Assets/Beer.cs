@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Beer : MonoBehaviour
 {
+    public GameObject beerDrinkReference;
+    private SpriteRenderer beerDrinkSpr;
+    private float drinkAlarm = 0;
+    
     public int state = 0;
     private SpriteRenderer spr;
     private AudioSource sound;
@@ -18,17 +22,32 @@ public class Beer : MonoBehaviour
     {
         spr = GetComponent<SpriteRenderer>();
         sound = GetComponent<AudioSource>();
-        
+        beerDrinkSpr = beerDrinkReference.GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (drinkAlarm > 0)
+        {
+            drinkAlarm -= Time.deltaTime;
+            if (drinkAlarm <= 0)
+            {
+                drinkAlarm = 0;
+                spr.enabled = true;
+                beerDrinkSpr.enabled = false;
+            }
+        }
     }
 
     private void OnMouseDown()
     {
+        if (drinkAlarm > 0)
+        {
+            return;
+        }
+        
         Drink();
     }
 
@@ -48,6 +67,10 @@ public class Beer : MonoBehaviour
         {
             return;
         }
+
+        beerDrinkSpr.enabled = true;
+        spr.enabled = false;
+        drinkAlarm = 1f;
         
         state++;
         ChangeSprite();
